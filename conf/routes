@@ -1,0 +1,23 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET         /                               @controllers.Application.index
+GET         /sign                           @controllers.Application.sign(file = "")
+GET         /sign/                          @controllers.Application.sign(file = "")
+GET         /sign/*file                     @controllers.Application.sign(file)
+GET         /app                            @controllers.Application.app(file = "")
+GET         /app/                           @controllers.Application.app(file = "")
+GET         /app/*file                      @controllers.Application.app(file)
+
+GET         /inapi/user                     @controllers.inapi.UserCtrl.getUser
+POST        /inapi/user/signIn              @controllers.inapi.UserCtrl.signInByPhone
+POST        /inapi/user/signUp              @controllers.inapi.UserCtrl.signUpByPhone
+GET         /inapi/user/captcha             @controllers.inapi.UserCtrl.createCaptcha
+POST        /inapi/user/smsValidCode        @controllers.inapi.UserCtrl.createSmsValidCode
+
+GET         /inapi/goods/list               @controllers.inapi.GoodsCtrl.getGoodsList
+
+# Map static resources from the /public folder to the /assets URL path
+GET         /assets/*file                   controllers.Assets.versioned(path="/public", file: Asset)

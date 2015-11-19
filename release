@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cd front-end
+npm install
+npm run release
+cd ..
+./sbt dist

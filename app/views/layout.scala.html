@@ -1,0 +1,22 @@
+@(title: String, foot: Html = Html(""))(content: Html)
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@title</title>
+        <link rel="stylesheet" media="screen" href="/assets/vendor/css/ribbons.css"/>
+        <link rel="stylesheet" media="screen" href="/assets/main/css/hieat.css"/>
+        <script src="/assets/main/js/@play.api.Play.current.configuration.getString("hieat.assets.js.common")" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="ribbon left blue">
+            <a href="https://github.com/yangbajing/hieat-app" target="_blank">
+                Fork me on GitHub
+            </a>
+        </div>
+        @content
+        @foot
+    </body>
+</html>
